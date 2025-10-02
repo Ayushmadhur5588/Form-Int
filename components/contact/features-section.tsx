@@ -51,7 +51,7 @@ export function FeaturesSection() {
   ]
 
   return (
-    <div className="w-1/2 bg-[#1a3a52] p-12 overflow-y-auto">
+    <div className="w-1/2 bg-[#193577] p-12 overflow-y-auto">
       <div className="max-w-xl mx-auto">
         <h2 className="text-4xl font-bold text-white mb-12">Get started with Foam Internet</h2>
 
