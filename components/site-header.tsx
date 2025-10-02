@@ -17,7 +17,7 @@ export function SiteHeader() {
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2">
             <div className="flex items-center gap-2">
-              <div className="text-2xl font-bold tracking-tight text-primary">FORM INTERNET</div>
+              <div className="text-2xl font-bold tracking-tight text-primary">FOAM INTERNET</div>
               <div className="grid grid-cols-3 gap-0.5">
                 {[...Array(9)].map((_, i) => (
                   <div key={i} className="h-1 w-1 rounded-full bg-primary" />
