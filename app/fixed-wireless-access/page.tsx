@@ -215,7 +215,7 @@ export default function FixedWirelessAccessPage() {
                   <h3 className="mb-4 text-2xl font-bold text-primary">PRIMARY AND BACKUP</h3>
                   <h3 className="text-2xl font-bold text-primary">CONNECTIVITY SOLUTIONS</h3>
                   <p className="mt-6 leading-relaxed text-muted-foreground">
-                    CX Offnet extends Form Internet's reach by harnessing partnerships with leading connectivity
+                    CX Offnet extends Foam Internet's reach by harnessing partnerships with leading connectivity
                     providers across South Africa. Designed to deliver both primary and backup solutions, CX Offnet
                     offers businesses a flexible, robust alternative to ensure uninterrupted connectivity, no matter the
                     challenge.
@@ -304,7 +304,7 @@ export default function FixedWirelessAccessPage() {
               {activeTab === "offnet" && (
                 <div>
                   <p className="mb-6 leading-relaxed">
-                    CX Offnet extends Form Internet's reach by harnessing partnerships with leading connectivity
+                    CX Offnet extends Foam Internet's reach by harnessing partnerships with leading connectivity
                     providers across South Africa. Designed to deliver both primary and backup solutions, CX Offnet
                     offers businesses a flexible, robust alternative to ensure uninterrupted connectivity, no matter the
                     challenge.

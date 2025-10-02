@@ -26,8 +26,8 @@ export function SiteFooter() {
             <h3 className="mb-4 text-sm font-semibold">GET IN TOUCH</h3>
             <div className="space-y-2 text-sm opacity-90">
               <p>+27 (0) 10 140 8800</p>
-              <p>info@forminternet.co.za</p>
-              <p>careers@forminternet.co.za</p>
+              <p>info@foaminternet.co.za</p>
+              <p>careers@foaminternet.co.za</p>
             </div>
             <Link
               href="/contact"
@@ -51,7 +51,7 @@ export function SiteFooter() {
 
         {/* Bottom Bar */}
         <div className="mt-12 border-t border-primary-foreground/20 pt-8 text-center text-sm opacity-75">
-          <p>&copy; {new Date().getFullYear()} Form Internet. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} Foam Internet. All rights reserved.</p>
         </div>
       </div>
     </footer>

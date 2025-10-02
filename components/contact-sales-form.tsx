@@ -34,7 +34,7 @@ export function ContactSalesForm({ open, onOpenChange }: ContactSalesFormProps) 
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
-    console.log("[v0] Form submitted:", formData)
+    console.log("Form submitted:", formData)
     onOpenChange(false)
   }
 
@@ -47,12 +47,12 @@ export function ContactSalesForm({ open, onOpenChange }: ContactSalesFormProps) 
     {
       icon: Bell,
       title: "Find support",
-      description: "Get always-on access to technical support, self-help, and your Form Internet instances.",
+      description: "Get always-on access to technical support, self-help, and your Foam Internet instances.",
     },
     {
       icon: Users,
       title: "Collaborate with community",
-      description: "Tap into 300k+ users for the latest Form Internet insights and best practices.",
+      description: "Tap into 300k+ users for the latest Foam Internet insights and best practices.",
     },
     {
       icon: MapPin,
@@ -61,18 +61,18 @@ export function ContactSalesForm({ open, onOpenChange }: ContactSalesFormProps) 
     },
     {
       icon: Repeat,
-      title: "Explore Form Internet Impact",
+      title: "Explore Foam Internet Impact",
       description: "Get tailored support and strategic guidance to integrate solutions and accelerate value.",
     },
     {
       icon: Monitor,
       title: "Experience a demo",
-      description: "See how the Form Internet Platform can streamline and unite your organization.",
+      description: "See how the Foam Internet Platform can streamline and unite your organization.",
     },
     {
       icon: Code,
       title: "Start developing",
-      description: "Experience what it's like to build apps on the Form Internet Platform with a free account.",
+      description: "Experience what it's like to build apps on the Foam Internet Platform with a free account.",
     },
     {
       icon: Handshake,
@@ -278,7 +278,7 @@ export function ContactSalesForm({ open, onOpenChange }: ContactSalesFormProps) 
 
           <div className="w-1/2 bg-[#1a3a52] p-12 overflow-y-auto">
             <div className="max-w-xl">
-              <h2 className="text-4xl font-bold text-white mb-12">Get started with Form Internet</h2>
+              <h2 className="text-4xl font-bold text-white mb-12">Get started with Foam Internet</h2>
 
               <div className="space-y-8">
                 {features.map((feature, index) => {
