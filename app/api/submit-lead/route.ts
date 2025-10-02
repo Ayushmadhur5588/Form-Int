@@ -13,11 +13,17 @@ export async function POST(request: Request) {
     const serviceNowUrl =
       "https://bangmetricllcdemo2.service-now.com/api/sn_lead_mgmt_core/leads_integration/create_record"
 
+    // Basic Auth header
+    const username = "web_integration"
+    const password = "BilluHalwaiNo.1"
+    const basicAuth = "Basic " + btoa(`${username}:${password}`)
+
     // Make the request to ServiceNow API
     const response = await fetch(serviceNowUrl, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
+        "Authorization": basicAuth, // credentials added here
       },
       body: JSON.stringify(formData),
     })
