@@ -41,7 +41,7 @@ export async function POST(request: Request) {
     )
   } catch (error) {
     // Handle any errors
-    console.error("[v0] Error submitting to ServiceNow:", error)
+    console.error("Error submitting to ServiceNow:", error)
     return NextResponse.json(
       {
         success: false,

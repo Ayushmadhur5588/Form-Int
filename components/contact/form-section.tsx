@@ -80,7 +80,7 @@ export function FormSection() {
         setSubmitError(result.message || "Failed to submit form")
       }
     } catch (error) {
-      console.error("[v0] Form submission error:", error)
+      console.error("Form submission error:", error)
       setSubmitError("An error occurred. Please try again.")
     } finally {
       setIsSubmitting(false)

@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   title: "Form Internet - Enterprise Connectivity Solutions",
   description:
     "High-performance connectivity solutions for businesses. Fixed Wireless Access and Private Networks for reliable, secure enterprise connectivity.",
-  generator: "v0.app",
+  generator: "Bangmetric_Ayush_Bhardwaj",
 }
 
 export default function RootLayout({
