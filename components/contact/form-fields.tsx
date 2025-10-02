@@ -4,10 +4,6 @@ import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 
-/**
- * Form fields component containing all input fields for the contact form
- * Handles basic contact info, job details, and preferences
- */
 interface FormFieldsProps {
   formData: {
     email: string
@@ -15,11 +11,7 @@ interface FormFieldsProps {
     lastName: string
     company: string
     telephone: string
-    jobLevel: string
-    department: string
-    jobFunction: string
-    country: string
-    interest: string
+    heardAboutUs: string
     interestedIn: string
     comments: string
   }
@@ -27,136 +19,107 @@ interface FormFieldsProps {
 }
 
 export function FormFields({ formData, onChange }: FormFieldsProps) {
+  // ✅ Common classes for all form fields
+  const formFieldClass =
+    "w-full border border-gray-300 h-12 text-base text-gray-500 placeholder:text-gray-500 rounded-md"
+
   return (
     <div className="space-y-4">
-      {/* Basic contact information */}
-      <Input
-        type="email"
-        placeholder="Business E-mail *"
-        required
-        value={formData.email}
-        onChange={(e) => onChange("email", e.target.value)}
-        className="border-gray-300 h-12 text-base placeholder:text-gray-500"
-      />
+      {/* How did you hear about us? */}
+      <Select
+        value={formData.heardAboutUs}
+        onValueChange={(value) => onChange("heardAboutUs", value)}
+      >
+        <SelectTrigger className={formFieldClass}>
+          <SelectValue placeholder="How did you hear about us?" />
+        </SelectTrigger>
+        <SelectContent>
+          <SelectItem value="google">Google</SelectItem>
+          <SelectItem value="friend">Friend / Referral</SelectItem>
+          <SelectItem value="social">Social Media</SelectItem>
+          <SelectItem value="other">Other</SelectItem>
+        </SelectContent>
+      </Select>
 
-      <Input
-        placeholder="First Name *"
-        required
-        value={formData.firstName}
-        onChange={(e) => onChange("firstName", e.target.value)}
-        className="border-gray-300 h-12 text-base placeholder:text-gray-500"
-      />
+      {/* I am interested in */}
+      <Select
+        value={formData.interestedIn}
+        onValueChange={(value) => onChange("interestedIn", value)}
+      >
+        <SelectTrigger className={formFieldClass}>
+          <SelectValue placeholder="I am interested in" />
+        </SelectTrigger>
+        <SelectContent>
+          <SelectItem value="cx-enterprise">CX Enterprise</SelectItem>
+          <SelectItem value="cx-enterprise-plus">CX Enterprise Plus</SelectItem>
+          <SelectItem value="cx-broadband">CX Broadband</SelectItem>
+          <SelectItem value="cx-broadband-plus">CX Broadband Plus</SelectItem>
+          <SelectItem value="cx-broadband-lite">CX Broadband Lite</SelectItem>
+          <SelectItem value="cx-specific">CX Specific</SelectItem>
+          <SelectItem value="cx-offnet">CX Offnet</SelectItem>
+          <SelectItem value="private-5g">Private 5G</SelectItem>
+          <SelectItem value="high-capacity">
+            High-capacity on-campus connectivity
+          </SelectItem>
+          <SelectItem value="wifi">Wi-Fi</SelectItem>
+          <SelectItem value="quote">Need a quote</SelectItem>
+          <SelectItem value="site-assessment">Need a site assessment</SelectItem>
+          <SelectItem value="media">Media</SelectItem>
+        </SelectContent>
+      </Select>
 
-      <Input
-        placeholder="Last Name *"
-        required
-        value={formData.lastName}
-        onChange={(e) => onChange("lastName", e.target.value)}
-        className="border-gray-300 h-12 text-base placeholder:text-gray-500"
-      />
-
+      {/* Company */}
       <Input
         placeholder="Company *"
         required
         value={formData.company}
         onChange={(e) => onChange("company", e.target.value)}
-        className="border-gray-300 h-12 text-base placeholder:text-gray-500"
+        className={formFieldClass}
       />
 
+      {/* First Name */}
+      <Input
+        placeholder="First Name *"
+        required
+        value={formData.firstName}
+        onChange={(e) => onChange("firstName", e.target.value)}
+        className={formFieldClass}
+      />
+
+      {/* Last Name */}
+      <Input
+        placeholder="Last Name *"
+        required
+        value={formData.lastName}
+        onChange={(e) => onChange("lastName", e.target.value)}
+        className={formFieldClass}
+      />
+
+      {/* Email */}
+      <Input
+        type="email"
+        placeholder="Email *"
+        required
+        value={formData.email}
+        onChange={(e) => onChange("email", e.target.value)}
+        className={formFieldClass}
+      />
+
+      {/* Phone Number */}
       <Input
         type="tel"
-        placeholder="Telephone *"
-        required
+        placeholder="Phone Number (optional)"
         value={formData.telephone}
         onChange={(e) => onChange("telephone", e.target.value)}
-        className="border-gray-300 h-12 text-base placeholder:text-gray-500"
+        className={formFieldClass}
       />
 
-      {/* Job-related dropdown fields */}
-      <Select required value={formData.jobLevel} onValueChange={(value) => onChange("jobLevel", value)}>
-        <SelectTrigger className="border-gray-300 h-12 text-base text-gray-500">
-          <SelectValue placeholder="Job Level *" />
-        </SelectTrigger>
-        <SelectContent>
-          <SelectItem value="executive">Executive</SelectItem>
-          <SelectItem value="director">Director</SelectItem>
-          <SelectItem value="manager">Manager</SelectItem>
-          <SelectItem value="individual">Individual Contributor</SelectItem>
-        </SelectContent>
-      </Select>
-
-      <Select required value={formData.department} onValueChange={(value) => onChange("department", value)}>
-        <SelectTrigger className="border-gray-300 h-12 text-base text-gray-500">
-          <SelectValue placeholder="Department *" />
-        </SelectTrigger>
-        <SelectContent>
-          <SelectItem value="it">IT</SelectItem>
-          <SelectItem value="operations">Operations</SelectItem>
-          <SelectItem value="sales">Sales</SelectItem>
-          <SelectItem value="marketing">Marketing</SelectItem>
-          <SelectItem value="finance">Finance</SelectItem>
-          <SelectItem value="other">Other</SelectItem>
-        </SelectContent>
-      </Select>
-
-      <Select required value={formData.jobFunction} onValueChange={(value) => onChange("jobFunction", value)}>
-        <SelectTrigger className="border-gray-300 h-12 text-base text-gray-500">
-          <SelectValue placeholder="Job Function *" />
-        </SelectTrigger>
-        <SelectContent>
-          <SelectItem value="network">Network Administration</SelectItem>
-          <SelectItem value="security">Security</SelectItem>
-          <SelectItem value="infrastructure">Infrastructure</SelectItem>
-          <SelectItem value="management">Management</SelectItem>
-          <SelectItem value="other">Other</SelectItem>
-        </SelectContent>
-      </Select>
-
-      <Select required value={formData.country} onValueChange={(value) => onChange("country", value)}>
-        <SelectTrigger className="border-gray-300 h-12 text-base text-gray-500">
-          <SelectValue placeholder="Country *" />
-        </SelectTrigger>
-        <SelectContent>
-          <SelectItem value="us">United States</SelectItem>
-          <SelectItem value="uk">United Kingdom</SelectItem>
-          <SelectItem value="ca">Canada</SelectItem>
-          <SelectItem value="au">Australia</SelectItem>
-          <SelectItem value="in">India</SelectItem>
-          <SelectItem value="other">Other</SelectItem>
-        </SelectContent>
-      </Select>
-
-      {/* User preferences and interests */}
-      <Select required value={formData.interest} onValueChange={(value) => onChange("interest", value)}>
-        <SelectTrigger className="border-gray-300 h-12 text-base text-gray-500">
-          <SelectValue placeholder="I would like to *" />
-        </SelectTrigger>
-        <SelectContent>
-          <SelectItem value="demo">Request a demo</SelectItem>
-          <SelectItem value="quote">Get a quote</SelectItem>
-          <SelectItem value="consultation">Schedule a consultation</SelectItem>
-          <SelectItem value="information">Get more information</SelectItem>
-        </SelectContent>
-      </Select>
-
-      <Select required value={formData.interestedIn} onValueChange={(value) => onChange("interestedIn", value)}>
-        <SelectTrigger className="border-gray-300 h-12 text-base text-gray-500">
-          <SelectValue placeholder="I am interested in *" />
-        </SelectTrigger>
-        <SelectContent>
-          <SelectItem value="fwa">Fixed Wireless Access</SelectItem>
-          <SelectItem value="private">Private Networks</SelectItem>
-          <SelectItem value="both">Both Solutions</SelectItem>
-          <SelectItem value="other">Other</SelectItem>
-        </SelectContent>
-      </Select>
-
-      {/* Optional comments field */}
+      {/* Message Box */}
       <Textarea
-        placeholder="Additional Comments (Optional)"
+        placeholder="Let us know how we can help?"
         value={formData.comments}
         onChange={(e) => onChange("comments", e.target.value)}
-        className="min-h-[100px] border-gray-300 text-base placeholder:text-gray-500"
+        className="w-full min-h-[100px] border border-gray-300 text-base text-gray-500 placeholder:text-gray-500 rounded-md"
       />
     </div>
   )
